@@ -1,0 +1,4 @@
+This project is an erlang testbed at Openhackbe.
+
+We will try to make something like a microblogging messaging backend in erlang,
+and learn a bit about the language's features in the process.
