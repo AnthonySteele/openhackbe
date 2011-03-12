@@ -1,0 +1,17 @@
+%%-*- mode: erlang -*-
+{application, messages,
+ [
+  {description, "messages"},
+  {vsn, "1"},
+  {modules, []},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  crypto,
+                  mochiweb,
+                  webmachine
+                 ]},
+  {mod, { messages_app, []}},
+  {env, []}
+ ]}.
