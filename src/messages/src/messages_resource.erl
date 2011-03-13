@@ -37,8 +37,9 @@ content_types_accepted(ReqData, State) ->
     {[{MT, handle_form_post}], ReqData, State}.
 
 handle_form_post(ReqData, State) ->
-    wrq:set_resp_header("Location", "http://localhost:8000/messages/1", ReqData),
-    {true, wrq:set_resp_body(wrq:req_body(ReqData),ReqData), State}.
+    ResponseBody = wrq:req_body(ReqData),
+    ResponseData = wrq:set_resp_header("Location", "http://localhost:8000/messages/1", ReqData),
+    {true, wrq:set_resp_body(ResponseBody, ResponseData), State}.
 
 allowed_methods(ReqData, State) ->
     {['HEAD', 'GET','POST','PUT'], ReqData, State}.
